@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		44D8749D2FE176C400BE7CBA /* Exceptions for "AsyncImageLib" folder in "AsyncImageLib" target */ = {
+		44D8749D2FE176C400BE7CBA /* Exceptions for "DemoApp" folder in "AsyncImageLib" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,12 +21,17 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		44D8748D2FE176C300BE7CBA /* AsyncImageLib */ = {
+		44D8748D2FE176C300BE7CBA /* DemoApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				44D8749D2FE176C400BE7CBA /* Exceptions for "AsyncImageLib" folder in "AsyncImageLib" target */,
+				44D8749D2FE176C400BE7CBA /* Exceptions for "DemoApp" folder in "AsyncImageLib" target */,
 			);
-			path = AsyncImageLib;
+			path = DemoApp;
+			sourceTree = "<group>";
+		};
+		44D874A42FE1817400BE7CBA /* Library */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +50,8 @@
 		44D874822FE176C300BE7CBA = {
 			isa = PBXGroup;
 			children = (
-				44D8748D2FE176C300BE7CBA /* AsyncImageLib */,
+				44D874A42FE1817400BE7CBA /* Library */,
+				44D8748D2FE176C300BE7CBA /* DemoApp */,
 				44D8748C2FE176C300BE7CBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +80,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				44D8748D2FE176C300BE7CBA /* AsyncImageLib */,
+				44D8748D2FE176C300BE7CBA /* DemoApp */,
+				44D874A42FE1817400BE7CBA /* Library */,
 			);
 			name = AsyncImageLib;
 			packageProductDependencies = (
@@ -147,12 +154,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X8324R6WH2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AsyncImageLib/Info.plist;
+				INFOPLIST_FILE = DemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -179,12 +187,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X8324R6WH2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AsyncImageLib/Info.plist;
+				INFOPLIST_FILE = DemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

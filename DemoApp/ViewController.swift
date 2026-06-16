@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  AsyncImageLib
 //
-//  Created by Eugene Pankratov on 16.06.2026.
+//  Created by Eugene Pankratov on 15.06.2026.
 //
 
 import UIKit
@@ -13,7 +13,4 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-
