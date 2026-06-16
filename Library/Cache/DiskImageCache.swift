@@ -27,7 +27,7 @@ actor DiskImageCache {
     ///   - fileManager: Injectable for testing.
     ///   - now: Injectable clock for testing expiration.
     init(
-        directoryName: String = "AsyncImageLibCache",
+        directoryName: String = "AsyncImageLib.Cache",
         expiration: TimeInterval = 4 * 60 * 60,
         fileManager: FileManager = .default,
         now: @escaping @Sendable () -> Date = { Date() }
