@@ -13,7 +13,7 @@ import Foundation
 /// image URL is derived from that id. `id` is decoded leniently so the model
 /// works whether the JSON encodes it as a string or a number. For a custom feed
 /// shaped as `[{ "id": ..., "url": ... }]`, decode `url` directly here instead.
-nonisolated struct ImageItem: Decodable, Identifiable, Equatable {
+struct ImageItem: Decodable, Identifiable, Equatable {
     let id: String
     let url: URL
 

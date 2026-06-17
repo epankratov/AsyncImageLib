@@ -20,7 +20,7 @@ nonisolated enum ImageEndpoint {
 
 /// Loads the list of images to display.
 nonisolated protocol ImageListProviding: Sendable {
-    func fetchImages() async throws -> [ImageItem]
+    func fetchImageList() async throws -> [ImageItem]
 }
 
 /// Fetches and decodes the image list over the network using `URLSession`.
@@ -33,7 +33,7 @@ nonisolated struct ImageListService: ImageListProviding {
         self.session = session
     }
 
-    func fetchImages() async throws -> [ImageItem] {
+    func fetchImageList() async throws -> [ImageItem] {
         guard let endpoint else {
             throw URLError(.badURL)
         }

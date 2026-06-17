@@ -14,13 +14,16 @@ import UIKit
 /// downloads populate both cache layers. Concurrent requests for the same URL
 /// share a single in-flight task, so an image is never downloaded twice at once.
 public actor AsyncImageLoader {
+
+    // MARK: - Singleton
     /// Shared instance used by the UI components and the example app.
     public static let shared = AsyncImageLoader()
 
+    // MARK: - Private members
     private let cache: AsyncImageCache
     private let session: URLSession
     /// Tasks being executed
-    private var inFlight: [CacheKey: Task<UIImage, Error>] = [:]
+    private var inFlightTasks: [CacheKey: Task<UIImage, Error>] = [:]
 
     init(cache: AsyncImageCache = AsyncImageCacheManager(), session: URLSession = .shared) {
         self.cache = cache
@@ -32,7 +35,7 @@ public actor AsyncImageLoader {
         let key = CacheKey(url: url)
 
         // Join an existing download for the same URL instead of starting a new one.
-        if let existing = inFlight[key] {
+        if let existing = inFlightTasks[key] {
             return try await existing.value
         }
 
@@ -52,8 +55,8 @@ public actor AsyncImageLoader {
             return image
         }
 
-        inFlight[key] = task
-        defer { inFlight[key] = nil }
+        inFlightTasks[key] = task
+        defer { inFlightTasks[key] = nil }
         return try await task.value
     }
 
@@ -61,7 +64,11 @@ public actor AsyncImageLoader {
     public func clearCache() async {
         await cache.removeAll()
     }
+}
 
+// MARK: - Private members
+
+extension AsyncImageLoader {
     private static func validate(_ response: URLResponse) throws {
         guard let http = response as? HTTPURLResponse else { return }
         guard (200..<300).contains(http.statusCode) else {

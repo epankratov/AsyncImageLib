@@ -10,7 +10,7 @@ import UIKit
 /// Shows the remote image list in a grid. Each cell displays the image (with a
 /// placeholder while loading) and its id. A "Clear Cache" bar button invalidates
 /// the image cache and reloads the visible images.
-final class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     private enum ViewState {
         case loading
@@ -75,7 +75,7 @@ final class ViewController: UIViewController {
             apply(.loading)
         }
         do {
-            let fetched = try await service.fetchImages()
+            let fetched = try await service.fetchImageList()
             items = fetched
             collectionView.reloadData()
             apply(fetched.isEmpty ? .empty : .content)
@@ -189,7 +189,7 @@ final class ViewController: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         items.count
     }
