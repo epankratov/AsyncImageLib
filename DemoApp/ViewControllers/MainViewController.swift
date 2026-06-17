@@ -7,9 +7,6 @@
 
 import UIKit
 
-/// Shows the remote image list in a grid. Each cell displays the image (with a
-/// placeholder while loading) and its id. A "Clear Cache" bar button invalidates
-/// the image cache and reloads the visible images.
 final class MainViewController: UIViewController {
 
     private enum ViewState {
@@ -67,8 +64,11 @@ final class MainViewController: UIViewController {
     @objc private func refreshTriggered() {
         Task { await load() }
     }
+}
 
-    // MARK: - Loading
+// MARK: - Private methods
+
+extension MainViewController {
 
     private func load() async {
         if items.isEmpty {
@@ -109,8 +109,6 @@ final class MainViewController: UIViewController {
             collectionView.isHidden = true
         }
     }
-
-    // MARK: - Setup
 
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(

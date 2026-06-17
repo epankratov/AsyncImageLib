@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		44D8748B2FE176C300BE7CBA /* AsyncImageLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncImageLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D8748B2FE176C300BE7CBA /* DemoUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D875032FE1820000BE7CBA /* DemoSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		44D8749D2FE176C400BE7CBA /* Exceptions for "DemoApp" folder in "AsyncImageLib" target */ = {
+		44D8749D2FE176C400BE7CBA /* Exceptions for "DemoApp" folder in "DemoUIKit" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 44D8748A2FE176C300BE7CBA /* AsyncImageLib */;
+			target = 44D8748A2FE176C300BE7CBA /* DemoUIKit */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -24,7 +25,7 @@
 		44D8748D2FE176C300BE7CBA /* DemoApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				44D8749D2FE176C400BE7CBA /* Exceptions for "DemoApp" folder in "AsyncImageLib" target */,
+				44D8749D2FE176C400BE7CBA /* Exceptions for "DemoApp" folder in "DemoUIKit" target */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -34,10 +35,27 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		44D875002FE1820000BE7CBA /* DemoShared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DemoShared;
+			sourceTree = "<group>";
+		};
+		44D875012FE1820000BE7CBA /* DemoSwiftUI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DemoSwiftUI;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		44D874882FE176C300BE7CBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44D875052FE1820000BE7CBA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,7 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				44D874A42FE1817400BE7CBA /* Library */,
+				44D875002FE1820000BE7CBA /* DemoShared */,
 				44D8748D2FE176C300BE7CBA /* DemoApp */,
+				44D875012FE1820000BE7CBA /* DemoSwiftUI */,
 				44D8748C2FE176C300BE7CBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,7 +79,8 @@
 		44D8748C2FE176C300BE7CBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				44D8748B2FE176C300BE7CBA /* AsyncImageLib.app */,
+				44D8748B2FE176C300BE7CBA /* DemoUIKit.app */,
+				44D875032FE1820000BE7CBA /* DemoSwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		44D8748A2FE176C300BE7CBA /* AsyncImageLib */ = {
+		44D8748A2FE176C300BE7CBA /* DemoUIKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 44D8749E2FE176C400BE7CBA /* Build configuration list for PBXNativeTarget "AsyncImageLib" */;
+			buildConfigurationList = 44D8749E2FE176C400BE7CBA /* Build configuration list for PBXNativeTarget "DemoUIKit" */;
 			buildPhases = (
 				44D874872FE176C300BE7CBA /* Sources */,
 				44D874882FE176C300BE7CBA /* Frameworks */,
@@ -82,12 +103,37 @@
 			fileSystemSynchronizedGroups = (
 				44D8748D2FE176C300BE7CBA /* DemoApp */,
 				44D874A42FE1817400BE7CBA /* Library */,
+				44D875002FE1820000BE7CBA /* DemoShared */,
 			);
-			name = AsyncImageLib;
+			name = DemoUIKit;
 			packageProductDependencies = (
 			);
 			productName = AsyncImageLib;
-			productReference = 44D8748B2FE176C300BE7CBA /* AsyncImageLib.app */;
+			productReference = 44D8748B2FE176C300BE7CBA /* DemoUIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44D875022FE1820000BE7CBA /* DemoSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44D875072FE1820000BE7CBA /* Build configuration list for PBXNativeTarget "DemoSwiftUI" */;
+			buildPhases = (
+				44D875042FE1820000BE7CBA /* Sources */,
+				44D875052FE1820000BE7CBA /* Frameworks */,
+				44D875062FE1820000BE7CBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				44D874A42FE1817400BE7CBA /* Library */,
+				44D875002FE1820000BE7CBA /* DemoShared */,
+				44D875012FE1820000BE7CBA /* DemoSwiftUI */,
+			);
+			name = DemoSwiftUI;
+			packageProductDependencies = (
+			);
+			productName = DemoSwiftUI;
+			productReference = 44D875032FE1820000BE7CBA /* DemoSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,6 +147,9 @@
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					44D8748A2FE176C300BE7CBA = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					44D875022FE1820000BE7CBA = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
@@ -119,7 +168,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				44D8748A2FE176C300BE7CBA /* AsyncImageLib */,
+				44D8748A2FE176C300BE7CBA /* DemoUIKit */,
+				44D875022FE1820000BE7CBA /* DemoSwiftUI */,
 			);
 		};
 /* End PBXProject section */
@@ -132,10 +182,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44D875062FE1820000BE7CBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44D874872FE176C300BE7CBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44D875042FE1820000BE7CBA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,6 +394,66 @@
 			};
 			name = Release;
 		};
+		44D875082FE1820000BE7CBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8324R6WH2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AsyncImage.DemoSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44D875092FE1820000BE7CBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X8324R6WH2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AsyncImage.DemoSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -342,11 +466,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		44D8749E2FE176C400BE7CBA /* Build configuration list for PBXNativeTarget "AsyncImageLib" */ = {
+		44D8749E2FE176C400BE7CBA /* Build configuration list for PBXNativeTarget "DemoUIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				44D8749F2FE176C400BE7CBA /* Debug */,
 				44D874A02FE176C400BE7CBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44D875072FE1820000BE7CBA /* Build configuration list for PBXNativeTarget "DemoSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44D875082FE1820000BE7CBA /* Debug */,
+				44D875092FE1820000BE7CBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
