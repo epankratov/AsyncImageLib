@@ -13,9 +13,9 @@ import UIKit
 /// Lookups resolve in order: memory cache, disk cache, then network. Successful
 /// downloads populate both cache layers. Concurrent requests for the same URL
 /// share a single in-flight task, so an image is never downloaded twice at once.
-actor AsyncImageLoader {
+public actor AsyncImageLoader {
     /// Shared instance used by the UI components and the example app.
-    static let shared = AsyncImageLoader()
+    public static let shared = AsyncImageLoader()
 
     private let cache: AsyncImageCache
     private let session: URLSession
@@ -28,7 +28,7 @@ actor AsyncImageLoader {
     }
 
     /// Returns the image for `url`, loading and caching it if necessary.
-    func image(from url: URL) async throws -> UIImage {
+    public func image(from url: URL) async throws -> UIImage {
         let key = CacheKey(url: url)
 
         // Join an existing download for the same URL instead of starting a new one.
@@ -58,7 +58,7 @@ actor AsyncImageLoader {
     }
 
     /// Clears both the memory and disk caches.
-    func clearCache() async {
+    public func clearCache() async {
         await cache.removeAll()
     }
 
@@ -68,17 +68,4 @@ actor AsyncImageLoader {
             throw ImageLoadingError.invalidResponse(statusCode: http.statusCode)
         }
     }
-}
-
-public func printLog(_ message: String, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
-    let className = (fileName as NSString).lastPathComponent
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-    let dateStr = formatter.string(from: Date())
-#if DEBUG
-    let prefix = ":[DEBUG]"
-#else
-    let prefix = ""
-#endif
-    print("[\(dateStr)]\(prefix) \(className)->\(functionName) {#\(lineNumber)} | \(message)")
 }

@@ -23,14 +23,14 @@ public class AsyncImageView: UIView {
     private var currentURL: URL?
     private var loadTask: Task<Void, Never>?
 
-    init(loader: AsyncImageLoader = .shared, placeholder: UIView? = nil) {
+    public init(loader: AsyncImageLoader = .shared, placeholder: UIView? = nil) {
         self.loader = loader
         self.placeholder = placeholder ?? UIActivityIndicatorView() as UIView
         super.init(frame: .zero)
         setupView()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         self.loader = .shared
         self.placeholder = UIActivityIndicatorView()
         super.init(coder: coder)
@@ -92,6 +92,14 @@ extension AsyncImageView {
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
+
+        placeholder.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(placeholder)
+        NSLayoutConstraint.activate([
+            placeholder.centerXAnchor.constraint(equalTo: centerXAnchor),
+            placeholder.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+        (placeholder as? UIActivityIndicatorView)?.startAnimating()
     }
 
     private func reapplyVisibility(isHidden: Bool) {
